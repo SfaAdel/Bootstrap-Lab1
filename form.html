@@ -40,18 +40,18 @@
 
     <h1 class="m1 p1 text-center">Sign Up</h1>
 
-  <form class="section p1 bg-light" method="post">
+  <form class="section p1 bg-light needs-validation" method="get" novalidate>
 
 <!-- first name -->
     <div class="row align-items-center py1">
         <div class="col-auto">
-          <label for="firstname">First Name:</label>
+          <label for="validationServer01">First Name:</label>
         </div>
         <div>
-          <input type="text" id="firstname" class="form-control is-invalid" aria-describedby="firstnameHelpInline" required>
+          <input type="text" id="validationServer01" class="form-control" aria-describedby="firstnameHelpInline" required>
         </div>
         <div >
-          <div id="firstnameHelpInline" class="form-text">
+          <div id="firstnameHelpInline" class="form-text invalid-feedback">
             Must be less than 10 characters long.
           </div>
         </div>
@@ -60,13 +60,13 @@
 <!-- last name -->
     <div class="row align-items-center py1">
         <div class="col-auto">
-          <label for="lastname">Last Name:</label>
+          <label for="validationServer02">Last Name:</label>
         </div>
         <div>
-          <input type="text" id="lastname" class="form-control is-invalid" aria-describedby="lastnameHelpInline" required>
+          <input type="text" id="validationServer02" class="form-control" aria-describedby="lastnameHelpInline" required>
         </div>
         <div >
-          <div id="lastnameHelpInline" class="form-text">
+          <div id="lastnameHelpInline" class="form-text invalid-feedback">
             Must be less than 10 characters long.
           </div>
         </div>
@@ -74,20 +74,20 @@
 
 <!-- email -->
      <div class="mb-3 ">
-        <label for="exampleFormControlInput1" class="form-label is-invalid" required>Email address</label>
-        <input type="email" class="form-control is-invalid" id="exampleFormControlInput1" placeholder="name@example.com" required>
+        <label for="validationServer03" class="form-label " required>Email address</label>
+        <input type="email" class="form-control" id="validationServer03" placeholder="name@example.com" required>
       </div>
 
 <!-- password -->
     <div class="row  align-items-center py1">
         <div class="col-auto">
-          <label for="inputPassword6">Password:</label>
+          <label for="validationServer04">Password:</label>
         </div>
         <div>
-          <input type="password" id="inputPassword6" class="form-control is-invalid" aria-describedby="passwordHelpInline" required>
+          <input type="password" id="validationServer04" class="form-control" aria-describedby="passwordHelpInline" required>
         </div>
         <div >
-          <div id="passwordHelpInline" class="form-text">
+          <div id="passwordHelpInline" class="form-text invalid-feedback">
             Must be 8-20 characters long.
           </div>
         </div>
@@ -104,7 +104,7 @@
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault2" required checked>
+        <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault2" required >
         <label class="form-check-label" for="flexRadioDefault2">
           Female  
         </label>
@@ -113,7 +113,7 @@
 <!-- Terms and condition -->
       <div class="col-12 py1">
         <div class="form-check">
-          <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
           <label class="form-check-label" for="invalidCheck3">
             Agree to terms and conditions
           </label>
@@ -130,6 +130,29 @@
   </div>
 
   </form>
+
+<script>
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
 
 </body>
 </html>
